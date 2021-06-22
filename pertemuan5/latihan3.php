@@ -15,10 +15,10 @@ $santri = [
 <h1>Daftar Santri</h1>
 <?php foreach($santri as $str){ ?>
 <ul>
-    <li>Nama : <?=$str[0]?></li>
-    <li>NIS : <?=$str[1]?></li>
-    <li>Jurusan : <?=$str[2]?></li>
-    <li>Email : <?=$str[3]?></li>
+    <li>Nama : <?=$str[0];?></li>
+    <li>NIS : <?=$str[1];?></li>
+    <li>Jurusan : <?=$str[2];?></li>
+    <li>Email : <?=$str[3];?></li>
 </ul>
 
 <?php } ?>
