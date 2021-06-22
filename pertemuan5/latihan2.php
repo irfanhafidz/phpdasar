@@ -1,5 +1,5 @@
 <?php 
-$angka = [11,21,123,52,67,22];
+$angkas = [11,21,123,52,67,22,99];
 ?>
 <!DOCTYPE html>
 <html>
@@ -7,7 +7,7 @@ $angka = [11,21,123,52,67,22];
 	<meta charset="utf-8">
 	<title>Latihan 2</title>
 	<style>
-		div{
+		.kotak{
 			width: 50px;
 			height: 50px;
 			background-color: blue;
@@ -17,12 +17,26 @@ $angka = [11,21,123,52,67,22];
 			margin: 3px;
 			float: left;
 		}
+		.clear{clear:both}
 	</style>
 </head>
 <body>
-	<?php for($s = 0; $s < count($angka); $s++) {?>
-<div><?= $angka[$s] ?></div>
-
+	<?php for($s = 0; $s < count($angkas); $s++) {?>
+<div class="kotak"><?= $angkas[$s] ?></div>
 <?php } ?>
+
+<div class="clear"></div>
+
+<?php foreach($angkas as $angka) {?>
+	<div class="kotak"><?= $angka ?></div>
+<?php } ?>
+
+<div class="clear"></div>
+
+<?php //mencoba alternatif syntax untuk control structure (templating) ?>
+
+<?php foreach($angkas as $angka) : ?>
+	<div class="kotak"><?= $angka ?></div>
+<?php endforeach ?>
 </body>
 </html>
