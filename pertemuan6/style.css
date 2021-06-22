@@ -1,0 +1,30 @@
+            .container{
+                list-style-type: none;
+
+            }
+            .list{
+                font-size: 20px;
+                font-family: sans-serif;
+                border-style:dotted;
+                padding: 30px;
+                width: 500px;
+                height: auto;
+                margin-top: 0px;
+                margin-left: 40px;                
+            }
+            .foto{
+                width: 120px;
+                height: 130px;
+                float: left;
+                margin-right: 32px;
+                border-radius: 5%;
+            }            
+            .clear{clear:both}
+            .float{
+                float: left;
+                margin: 20px;
+            }
+            h1{
+                text-align: center;
+                position: relative;
+            }
