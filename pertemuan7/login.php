@@ -23,7 +23,7 @@ if (isset($_POST["submit"])) {
 <?php if(isset($error)){ ?>
     <p class="wrong">Username / Password salah!</p>
 <?php } ?>
-<ul class="list">
+<ul>
     <form action="login.php" method="post">
     <li>
     <label for="username">Username : </label>
