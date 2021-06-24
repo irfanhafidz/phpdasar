@@ -19,8 +19,8 @@ $penduduk = query("SELECT * FROM penduduk")
     <th>Foto</th>
     <th>Nama</th>
     <th>NIK</th>
-    <th>Email</th>
     <th>Kelas</th>
+    <th>Email</th>
     <?php foreach($penduduk as $baris):?>
 </tr>
     <td><?= $baris["id"]?></td>
