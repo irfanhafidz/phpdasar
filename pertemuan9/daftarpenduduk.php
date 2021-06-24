@@ -1,10 +1,6 @@
 <?php
-//XAMPP
-$conn = mysqli_connect("localhost", "root", "", "phpdasar");
-$result = mysqli_query($conn, "SELECT * FROM penduduk");
-
-//$pdk = mysqli_fetch_all($result);
-// var_dump($pdk);
+require "functions.php";
+$penduduk = query("SELECT * FROM penduduk")
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,7 +21,7 @@ $result = mysqli_query($conn, "SELECT * FROM penduduk");
     <th>NIK</th>
     <th>Email</th>
     <th>Kelas</th>
-    <?php while($baris = mysqli_fetch_assoc($result)):?>
+    <?php foreach($penduduk as $baris):?>
 </tr>
     <td><?= $baris["id"]?></td>
     <td><img class="foto" src="img/<?=$baris["foto"]?>"></td>
@@ -34,7 +30,7 @@ $result = mysqli_query($conn, "SELECT * FROM penduduk");
     <td><?= $baris["kelas"]?></td>
     <td><?= $baris["email"]?></td>
 <tr>
-<?php endwhile ?>
+<?php endforeach ?>
 </tr>
 </table>
 </body>
