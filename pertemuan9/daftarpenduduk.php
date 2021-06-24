@@ -1,6 +1,7 @@
 <?php
 require "functions.php";
-$penduduk = query("SELECT * FROM penduduk")
+$penduduk = query("SELECT * FROM penduduk");
+$i = 1;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,9 +14,9 @@ $penduduk = query("SELECT * FROM penduduk")
 </head>
 <body>
 <h1>Daftar Penduduk</h1>
-<table border="1" cellpadding="10" cellspacing="0">
+<table border="1px" cellpadding="10" cellspacing="0">
 <tr>
-    <th>ID</th>
+    <th>No.</th>
     <th>Foto</th>
     <th>Nama</th>
     <th>NIK</th>
@@ -23,13 +24,14 @@ $penduduk = query("SELECT * FROM penduduk")
     <th>Email</th>
     <?php foreach($penduduk as $baris):?>
 </tr>
-    <td><?= $baris["id"]?></td>
+    <td><?= $i; ?></td>
     <td><img class="foto" src="img/<?=$baris["foto"]?>"></td>
     <td><?= $baris["fname"]." ".$baris["lname"]?></td>
     <td><?= $baris["nik"]?></td>
     <td><?= $baris["kelas"]?></td>
     <td><?= $baris["email"]?></td>
 <tr>
+<?php $i++ ?>
 <?php endforeach ?>
 </tr>
 </table>

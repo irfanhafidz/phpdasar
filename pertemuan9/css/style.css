@@ -1,7 +1,9 @@
-
 .foto{
     width: 120px;
     height: 130px;
     float: left;
     border-radius: 5%;
-}            
+}
+table{
+    table-layout: fixed;
+}
