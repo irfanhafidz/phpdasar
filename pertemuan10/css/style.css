@@ -1,0 +1,61 @@
+/* FOR index.php */
+.table{
+    margin-top: 10px;
+}
+.foto{
+    width: 120px;
+    height: 130px;
+    float: left;
+    border-radius: 5%;
+}
+.clear{
+    clear: both;
+}
+/* FOR inputdata.php */
+h2{
+    text-align: center;
+    color: white;
+}
+ul{
+    list-style-type: none;
+    margin-left: -35px;
+
+}
+.body {
+    background-color: #5a5c5f;
+    padding: 1em;
+    width: 400px;
+    border-radius: 8%;
+    text-align: center;
+}
+.list > li {
+    margin-bottom: 10px;
+}
+.list label {
+    border-radius: 5px;
+    background-color: #a1aab0;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 0;
+    margin-right: .5em;
+    min-width: 30%;
+    padding: 2px;
+    width: 150px
+}
+.inputbody {
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+    align-items: center;
+}
+.upload{
+    position: relative;
+    /* margin-left: 75px; */
+}
+/* alert */
+.alert{
+    color: rgb(236, 45, 45);
+    float: center;
+    position: relative;
+}
