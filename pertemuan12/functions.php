@@ -47,7 +47,7 @@ function modify($data) {
     $email = htmlspecialchars($data["email"]);
     $foto = htmlspecialchars($data["foto"]);
 
-    //query insert data
+    //query update data
     $query = "UPDATE penduduk SET
         fname = '$fname',
         lname = '$lname',
