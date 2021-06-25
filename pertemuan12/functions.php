@@ -1,0 +1,76 @@
+<?php 
+//XAMPP
+$conn = mysqli_connect("localhost", "root", "", "phpdasar");
+
+function query($query) {
+    global $conn;
+    $result = mysqli_query($conn, $query);
+    $container = [];
+    while( $baris = mysqli_fetch_assoc($result) ){
+    $container[] = $baris;
+    }
+    return $container;
+}
+
+function input($data) {
+    global $conn;
+    //membuat container array
+    $fname = htmlspecialchars($data["fname"]);
+    $lname = htmlspecialchars($data["lname"]);
+    $nik = htmlspecialchars($data["nik"]);
+    $kelas = htmlspecialchars($data["kelas"]);
+    $email = htmlspecialchars($data["email"]);
+    $foto = htmlspecialchars($data["foto"]);
+
+    //query insert data
+    $query = "INSERT INTO penduduk VALUES
+    ('', '$fname', '$lname', '$nik', '$kelas', '$email', '$foto')";
+    mysqli_query($conn, $query);
+
+    return mysqli_affected_rows($conn);
+}
+
+function delete($id) {
+    global $conn;
+    mysqli_query($conn, "DELETE FROM penduduk WHERE id = $id");
+    return mysqli_affected_rows($conn);
+}
+
+function modify($data) {
+    global $conn;
+    //membuat container array
+    $id = ($data["id"]);
+    $fname = htmlspecialchars($data["fname"]);
+    $lname = htmlspecialchars($data["lname"]);
+    $nik = htmlspecialchars($data["nik"]);
+    $kelas = htmlspecialchars($data["kelas"]);
+    $email = htmlspecialchars($data["email"]);
+    $foto = htmlspecialchars($data["foto"]);
+
+    //query insert data
+    $query = "UPDATE penduduk SET
+        fname = '$fname',
+        lname = '$lname',
+        nik = '$nik',
+        kelas = '$kelas',
+        email = '$email',
+        foto = '$foto'
+        WHERE id = $id
+        ";
+    mysqli_query($conn, $query);
+
+    return mysqli_affected_rows($conn);
+}
+
+function search($keyword) {
+    $query = "SELECT * FROM penduduk
+    WHERE
+    fname LIKE '%$keyword%' OR
+    lname LIKE '%$keyword%' OR
+    nik LIKE '%$keyword%' OR
+    kelas LIKE '%$keyword%'
+    ";
+    return query($query);
+}
+
+?>
