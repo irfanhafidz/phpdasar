@@ -15,7 +15,7 @@ if( isset($_POST["submit"])) {
         echo 
         "<script>
         alert('data gagal diubah!');
-        document.location.href = 'modify.php';        
+        document.location.href = 'index.php';        
         </script>";
     }
 }
