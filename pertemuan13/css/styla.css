@@ -1,0 +1,89 @@
+/* FOR index.php */
+.searchbar{
+    float: right;
+    margin-right: 20px;
+}
+.table{
+    margin-top: 10px;
+    width: 100%;
+    text-align: center  ;
+}
+.foto{
+    width: 120px;
+    height: 130px;
+    border-radius: 5%;
+}
+.clear{
+    clear: both;
+}
+/* FOR inputdata.php */
+h2{
+    text-align: center;
+    color: white;
+}
+ul{
+    list-style-type: none;
+    margin-left: -40px;
+
+}
+.body {
+    background-color: #515155;
+    padding: 1em;
+    width: 400px;
+    border-radius: 8%;
+    text-align: center;
+}
+.list > li {
+    margin-bottom: 10px;
+}
+.list label {
+    border-radius: 5px;
+    background-color: #a1aab0;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 0;
+    margin-right: .5em;
+    min-width: 30%;
+    padding: 2px;
+    width: 150px
+}
+.inputbody {
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+    align-items: center;
+}
+.upload{
+    position: absolute; 
+    margin-left: 30px;
+}
+.submit{
+    position: relative;
+    margin-top: 65px;
+}
+/* alert */
+.alert{
+    color: rgb(236, 45, 45);
+    float: center;
+    position: relative;
+}
+/* FOR modify.php */
+.modbody {
+    background-color: #000000;
+    padding: 1em;
+    width: 400px;
+    border-radius: 8%;
+    text-align: center;
+}
+.modifbody {
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+    align-items: center;
+}
+.prev{
+    width: 40px;
+    height: 40px;
+}
+
