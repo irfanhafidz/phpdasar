@@ -33,7 +33,6 @@ function input($data) {
     return mysqli_affected_rows($conn);
 }
 
-
 function upload(){
     $nameFile = $_FILES['foto']['name'];
     $sizeFile = $_FILES['foto']['size'];
@@ -68,11 +67,8 @@ function upload(){
     $nameFileNew .= '.';
     $nameFileNew .= $extImage;
 
-
     move_uploaded_file($tmpName, 'img/' . $nameFileNew);
     return $nameFileNew;
-
-
 }
 
 function delete($id) {
@@ -91,7 +87,6 @@ function modify($data) {
     $kelas = htmlspecialchars($data["kelas"]);
     $email = htmlspecialchars($data["email"]);
     $fotoOld = htmlspecialchars($data["fotoOld"]);
-
 
     if($_FILES['foto']['error'] === 4 ){
         $foto = $fotoOld;   
@@ -124,5 +119,34 @@ function search($keyword) {
     ";
     return query($query);
 }
+
+function regist($data) {
+    global $conn;
+
+    $username = strtolower(stripslashes($data["username"]));
+    $password = mysqli_real_escape_string($conn, $data["password"]);
+    $password2 = mysqli_real_escape_string($conn, $data["password2"]);
+
+    //check used username
+    $result = mysqli_query($conn, "SELECT username FROM user WHERE username = '$username'");
+    if(mysqli_fetch_assoc($result)) {
+        echo "<script>alert('Username sudah dipakai!');
+        </script>";
+        return false;
+    }
+
+    //check matching confrimation password
+    if($password !== $password2) {
+        echo "<script>alert('Pastikan confirm password yang anda masukkan sama!');
+        </script>";
+        return false;
+    }
+
+    $password = password_hash($password, PASSWORD_DEFAULT);
+    
+    mysqli_query($conn, "INSERT INTO user VALUES('', '$username', '$password')");
+    return mysqli_affected_rows($conn);
+}
+
 
 ?>
