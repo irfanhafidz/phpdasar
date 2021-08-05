@@ -32,7 +32,7 @@ if( isset($_POST["login"]) ) {
 <body>
     <h1>Halaman Login</h1>
     <?php if( isset($error)) : ?>
-        <p style="color:red; font-style:italic;">username / password salah!</p>
+        <p style="color:red; font-style:italic;">username / password salah!!!</p>
     <?php endif ?>
     <form action="" method="post">
         <ul>            
